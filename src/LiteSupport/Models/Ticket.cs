@@ -9,7 +9,7 @@ namespace LiteSupport.Models
     {
         public int TicketId { get; set; }
         public string Title { get; set; }
-        public DateTime DateCreated { get; set; }
+        public DateTime DateCreatedT { get; set; }
         public string Description { get; set; }
         public bool IsComplete { get; set; }
         public DateTime DateClosed { get; set; }

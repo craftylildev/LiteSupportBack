@@ -8,9 +8,10 @@ using LiteSupport.Models;
 namespace LiteSupport.Migrations
 {
     [DbContext(typeof(LSContext))]
-    partial class LSContextModelSnapshot : ModelSnapshot
+    [Migration("20160615142156_editDateCreatedProps")]
+    partial class editDateCreatedProps
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rc2-20901")

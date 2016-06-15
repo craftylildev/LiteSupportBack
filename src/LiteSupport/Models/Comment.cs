@@ -9,7 +9,7 @@ namespace LiteSupport.Models
     {
         public int CommentId { get; set; }
         public string CommentMsg { get; set; }
-        public DateTime DateCreated { get; set; }
+        public DateTime DateCreatedC { get; set; }
 
         public int TicketId { get; set; }
         public int EmployeeId { get; set; }
