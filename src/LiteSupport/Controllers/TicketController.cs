@@ -43,8 +43,8 @@ namespace LiteSupport.Controllers
                                                on t.TicketId equals co.TicketId
                                                join c in _context.Customer
                                                on t.CustomerId equals c.CustomerId
-                                               //join e in _context.Employee
-                                               //on co.EmployeeId equals e.EmployeeId
+                                               join e in _context.Employee
+                                               on co.EmployeeId equals e.EmployeeId
                                                orderby t.TicketId
                                          select new TicketDetails
                                          {
@@ -63,10 +63,10 @@ namespace LiteSupport.Controllers
                                              URL = c.URL,
 
                                              CommentId = co.CommentId,
-                                             CommentMsg = co.CommentMsg
-                                             //FirstNameE = e.FirstNameE,
-                                             //LastNameE = e.LastNameE
-                                                                                          
+                                             CommentMsg = co.CommentMsg,
+                                             FirstNameE = e.FirstNameE,
+                                             LastNameE = e.LastNameE
+
                                          };
             if (ticket == null)
             {
