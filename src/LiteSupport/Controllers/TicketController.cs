@@ -41,9 +41,10 @@ namespace LiteSupport.Controllers
                                                on t.PriorityId equals p.PriorityId
                                                join co in _context.Comment
                                                on t.TicketId equals co.TicketId
-                                               //group by ticketID
                                                join c in _context.Customer
                                                on t.CustomerId equals c.CustomerId
+                                               //join e in _context.Employee
+                                               //on co.EmployeeId equals e.EmployeeId
                                                orderby t.TicketId
                                          select new TicketDetails
                                          {
@@ -54,15 +55,17 @@ namespace LiteSupport.Controllers
                                              PriorityName = p.PriorityName,
                                              Description = t.Description,
 
-                                             FirstName = c.FirstName,
-                                             LastName = c.LastName,
+                                             FirstNameC = c.FirstNameC,
+                                             LastNameC = c.LastNameC,
                                              Company = c.Company,
-                                             Email = c.Email,
-                                             Phone = c.Phone,
+                                             EmailC = c.EmailC,
+                                             PhoneC = c.PhoneC,
                                              URL = c.URL,
 
                                              CommentId = co.CommentId,
                                              CommentMsg = co.CommentMsg
+                                             //FirstNameE = e.FirstNameE,
+                                             //LastNameE = e.LastNameE
                                                                                           
                                          };
             if (ticket == null)

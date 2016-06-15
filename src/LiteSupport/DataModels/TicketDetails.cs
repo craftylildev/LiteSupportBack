@@ -15,12 +15,12 @@ namespace LiteSupport.DataModels
         public DateTime DateClosed { get; set; }
 
         //public int CustomerId { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string FirstNameC { get; set; }
+        public string LastNameC { get; set; }
         public string Company { get; set; }
         public string URL { get; set; }
-        public string Phone { get; set; }
-        public string Email { get; set; }
+        public string PhoneC { get; set; }
+        public string EmailC { get; set; }
 
         //public int TtypeId { get; set; }
         public string TtypeName { get; set; }
@@ -31,6 +31,10 @@ namespace LiteSupport.DataModels
         public int CommentId { get; set; }
         public string CommentMsg { get; set; }
         public DateTime DateCreatedC { get; set; }
+
+        //public int EmployeeId { get; set; }
+        public string FirstNameE { get; set; }
+        public string LastNameE { get; set; }
 
     }
 }
