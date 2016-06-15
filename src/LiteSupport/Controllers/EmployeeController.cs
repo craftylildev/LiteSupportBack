@@ -40,11 +40,11 @@ namespace LiteSupport.Controllers
                                          select new EmployeeDetails
                                          {
                                              EmployeeId = e.EmployeeId,
-                                             FirstName = e.FirstName,
-                                             LastName = e.LastName,
+                                             FirstName = e.FirstNameE,
+                                             LastName = e.LastNameE,
                                              Username = e.Username,
-                                             Email = e.Email,
-                                             Phone = e.Phone,
+                                             Email = e.EmailE,
+                                             Phone = e.PhoneE,
                                              DepartmentId = e.DepartmentId,
                                              DepartmentName = d.DepartmentName
 
