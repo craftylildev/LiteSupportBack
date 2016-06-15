@@ -197,6 +197,7 @@
 "C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Controllers\CustomerController.cs"
 "C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Controllers\EmployeeController.cs"
 "C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\DataModels\EmployeeDetails.cs"
+"C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\DataModels\TicketDetails.cs"
 "C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\20160614151930_InitialMigration.cs"
 "C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\20160614151930_InitialMigration.Designer.cs"
 "C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\20160615132053_addUsernameToEmployee.cs"

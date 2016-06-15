@@ -200,10 +200,14 @@ C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSu
 C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Startup.cs
 C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Controllers\CustomerController.cs
 C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Controllers\EmployeeController.cs
+C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\DataModels\EmployeeDetails.cs
+C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\DataModels\TicketDetails.cs
 C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\20160614151930_InitialMigration.cs
 C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\20160614151930_InitialMigration.Designer.cs
 C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\20160615132053_addUsernameToEmployee.cs
 C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\20160615132053_addUsernameToEmployee.Designer.cs
+C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\20160615142156_editDateCreatedProps.cs
+C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\20160615142156_editDateCreatedProps.Designer.cs
 C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\LSContextModelSnapshot.cs
 C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Models\Comment.cs
 C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Models\Customer.cs
