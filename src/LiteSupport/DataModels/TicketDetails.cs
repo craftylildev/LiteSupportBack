@@ -14,7 +14,7 @@ namespace LiteSupport.DataModels
         public bool IsComplete { get; set; }
         public DateTime DateClosed { get; set; }
 
-        public int CustomerId { get; set; }
+        //public int CustomerId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Company { get; set; }
@@ -22,10 +22,10 @@ namespace LiteSupport.DataModels
         public string Phone { get; set; }
         public string Email { get; set; }
 
-        public int TtypeId { get; set; }
+        //public int TtypeId { get; set; }
         public string TtypeName { get; set; }
 
-        public int PriorityId { get; set; }
+        //public int PriorityId { get; set; }
         public string PriorityName { get; set; }
 
         public int CommentId { get; set; }
