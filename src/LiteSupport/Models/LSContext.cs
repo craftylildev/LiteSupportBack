@@ -20,5 +20,5 @@ namespace LiteSupport.Models
         public DbSet<Priority> Priority { get; set; }
         public DbSet<Ttype> Ttype { get; set; }
 
-}
+    }
 }

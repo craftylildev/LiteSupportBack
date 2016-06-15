@@ -25,37 +25,134 @@ namespace LiteSupport.Controllers
             _context = context;
         }
 
-
         // GET: api/Customer
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            IQueryable<Customer> customers = from c in _context.Customer
+                                             select c;
+            if (customers == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(customers);
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        // GET api/Customer/5
+        [HttpGet("{id}", Name = "GetCustomer")]
+        public IActionResult Get(int id)
         {
-            return "value";
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            Customer customers = _context.Customer.Single(c => c.CustomerId == id);
+
+            if (customers == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(customers);
         }
 
-        // POST api/values
+        // POST api/Customer
         [HttpPost]
-        public void Post([FromBody]string value)
+        public IActionResult Post([FromBody]Customer customer)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            _context.Customer.Add(customer);
+
+            try
+            {
+                _context.SaveChanges();
+            }
+            catch (DbUpdateException)
+            {
+                if (CustomerExists(customer.CustomerId))
+                {
+                    return new StatusCodeResult(StatusCodes.Status409Conflict);
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return CreatedAtRoute("GetCustomer", new { id = customer.CustomerId }, customer);
+
         }
 
-        // PUT api/values/5
+        // PUT api/Customer/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public IActionResult Put(int id, [FromBody] Customer customer)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            if (id != customer.CustomerId)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(customer).State = EntityState.Modified;
+
+            try
+            {
+                _context.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!CustomerExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return new StatusCodeResult(StatusCodes.Status204NoContent);
         }
 
-        // DELETE api/values/5
+        // DELETE api/Customer/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            Customer customer = _context.Customer.Single(m => m.CustomerId == id);
+            if (customer == null)
+            {
+                return NotFound();
+            }
+
+            _context.Customer.Remove(customer);
+            _context.SaveChanges();
+
+            return Ok(customer);
+        }
+
+        private bool CustomerExists(int id)
+        {
+            return _context.Customer.Count(e => e.CustomerId == id) > 0;
         }
     }
 }
