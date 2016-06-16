@@ -34,40 +34,57 @@ namespace LiteSupport.Controllers
                 return BadRequest(ModelState);
             }
 
-            IQueryable<TicketDetails> ticket = from t in _context.Ticket
-                                               join ty in _context.Ttype
-                                               on t.TtypeId equals ty.TtypeId
+            //IQueryable<TicketDetails> ticket = from t in _context.Ticket
+            //                                   join ty in _context.Ttype
+            //                                   on t.TtypeId equals ty.TtypeId
+            //                                   join p in _context.Priority
+            //                                   on t.PriorityId equals p.PriorityId
+            //                                   join co in _context.Comment
+            //                                   on t.TicketId equals co.TicketId
+            //                                   join c in _context.Customer
+            //                                   on t.CustomerId equals c.CustomerId
+            //                                   join e in _context.Employee
+            //                                   on co.EmployeeId equals e.EmployeeId
+            //                                   orderby t.TicketId
+            //                             select new TicketDetails
+            //                             {
+            //                                 TicketId = t.TicketId,
+            //                                 Title = t.Title,
+            //                                 DateCreatedT = t.DateCreatedT,
+            //                                 TtypeName = ty.TtypeName,
+            //                                 PriorityName = p.PriorityName,
+            //                                 Description = t.Description,
+            //                                 FirstNameC = c.FirstNameC,
+            //                                 LastNameC = c.LastNameC,
+            //                                 Company = c.Company,
+            //                                 EmailC = c.EmailC,
+            //                                 PhoneC = c.PhoneC,
+            //                                 URL = c.URL,
+            //                                 CommentId = co.CommentId,
+            //                                 CommentMsg = co.CommentMsg,
+            //                                 FirstNameE = e.FirstNameE,
+            //                                 LastNameE = e.LastNameE
+            //                             };
+
+            IQueryable<object> ticket = from t in _context.Ticket
                                                join p in _context.Priority
                                                on t.PriorityId equals p.PriorityId
-                                               join co in _context.Comment
-                                               on t.TicketId equals co.TicketId
                                                join c in _context.Customer
                                                on t.CustomerId equals c.CustomerId
-                                               join e in _context.Employee
-                                               on co.EmployeeId equals e.EmployeeId
                                                orderby t.TicketId
-                                         select new TicketDetails
-                                         {
-                                             TicketId = t.TicketId,
-                                             Title = t.Title,
-                                             DateCreatedT = t.DateCreatedT,
-                                             TtypeName = ty.TtypeName,
-                                             PriorityName = p.PriorityName,
-                                             Description = t.Description,
 
-                                             FirstNameC = c.FirstNameC,
-                                             LastNameC = c.LastNameC,
-                                             Company = c.Company,
-                                             EmailC = c.EmailC,
-                                             PhoneC = c.PhoneC,
-                                             URL = c.URL,
+                                               select new 
+                                               {
+                                                   TicketId = t.TicketId,
+                                                   Title = t.Title,
+                                                   DateCreatedT = t.DateCreatedT,
+                                                   
+                                                   PriorityName = p.PriorityName,
 
-                                             CommentId = co.CommentId,
-                                             CommentMsg = co.CommentMsg,
-                                             FirstNameE = e.FirstNameE,
-                                             LastNameE = e.LastNameE
+                                                   Company = c.Company
+                                               };
 
-                                         };
+
             if (ticket == null)
             {
                 return NotFound();
@@ -85,7 +102,50 @@ namespace LiteSupport.Controllers
                 return BadRequest(ModelState);
             }
 
-            Ticket ticket = _context.Ticket.Single(t => t.TicketId == id);
+            //Ticket ticket = _context.Ticket.Single(t => t.TicketId == id);
+
+            IQueryable<object> ticket = from t in _context.Ticket
+                                        join ty in _context.Ttype
+                                        on t.TtypeId equals ty.TtypeId
+                                        join p in _context.Priority
+                                        on t.PriorityId equals p.PriorityId
+                                        join c in _context.Customer
+                                        on t.CustomerId equals c.CustomerId
+                                        where t.TicketId == id
+                                        
+                                        select new
+                                        {
+                                            TicketId = t.TicketId,
+                                            Title = t.Title,
+                                            DateCreatedT = t.DateCreatedT,
+                                            TtypeName = ty.TtypeName,
+                                            PriorityName = p.PriorityName,
+                                            Description = t.Description,
+
+                                            FirstNameC = c.FirstNameC,
+                                            LastNameC = c.LastNameC,
+                                            Company = c.Company,
+                                            EmailC = c.EmailC,
+                                            PhoneC = c.PhoneC,
+                                            URL = c.URL,
+
+                                            Comment = from co in _context.Comment
+                                                      join t in _context.Ticket
+                                                      on co.TicketId equals t.TicketId
+
+                                                      join e in _context.Employee
+                                                      on co.EmployeeId equals e.EmployeeId
+
+                                                      where co.TicketId == id
+                                                      select new
+                                                      {
+                                                          CommentId = co.CommentId,
+                                                          CommentMsg = co.CommentMsg,
+                                                          FirstNameE = e.FirstNameE,
+                                                          LastNameE = e.LastNameE,
+                                                          DateCreatedC = co.DateCreatedC
+                                                      }
+                                        };
 
             if (ticket == null)
             {
