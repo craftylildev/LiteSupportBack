@@ -27,7 +27,7 @@ namespace LiteSupport.Controllers
 
         // GET: api/Customer
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult Get([FromQuery]int? CustomerId)
         {
             if (!ModelState.IsValid)
             {
@@ -40,6 +40,12 @@ namespace LiteSupport.Controllers
             {
                 return NotFound();
             }
+
+            if (CustomerId != null)
+            {
+                customers = customers.Where(cus => cus.CustomerId == CustomerId);
+            }
+
 
             return Ok(customers);
         }
