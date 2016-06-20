@@ -34,7 +34,7 @@ namespace LiteSupport.Controllers
                 return BadRequest(ModelState);
             }
             
-            IQueryable<EmployeeDetails> employees = from e in _context.Employee
+            IQueryable<EmployeeDetails> employee = from e in _context.Employee
                                              join d in _context.Department
                                              on e.DepartmentId equals d.DepartmentId
                                              select new EmployeeDetails
@@ -52,17 +52,17 @@ namespace LiteSupport.Controllers
             //    employee = employee.Where(e => e.Username == username);
             //}
 
-            if (employees == null)
+            if (employee == null)
             {
                 return NotFound();
             }
 
             if (EmployeeId != null)
             {
-                employees = employees.Where(emp => emp.EmployeeId == EmployeeId);
+                employee = employee.Where(emp => emp.EmployeeId == EmployeeId);
             }
 
-            return Ok(employees);
+            return Ok(employee);
         }
         
         // GET api/Employee/5
@@ -101,6 +101,7 @@ namespace LiteSupport.Controllers
         }
 
         // POST api/Employee
+        [Route("api/Employee")]
         [HttpPost]
         public IActionResult Post([FromBody]Employee employee)
         {
@@ -117,7 +118,7 @@ namespace LiteSupport.Controllers
             {
                 return new StatusCodeResult(StatusCodes.Status409Conflict);
             }
-            
+
             _context.Employee.Add(employee);
             try
             {
@@ -140,6 +141,7 @@ namespace LiteSupport.Controllers
 
         // PUT api/Employee/5
         [HttpPut("{id}")]
+        [EnableCors("AllowDevelopmentEnvironment")]
         public IActionResult Put(int id, [FromBody] Employee employee)
         {
             if (!ModelState.IsValid)
@@ -160,7 +162,7 @@ namespace LiteSupport.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!EmployeeExists(employee.EmployeeId))
+                if (!EmployeeExists(id))
                 {
                     return NotFound();
                 }
@@ -170,6 +172,7 @@ namespace LiteSupport.Controllers
                 }
             }
 
+            //return Ok(employee);
             return new StatusCodeResult(StatusCodes.Status204NoContent);
         }
 
