@@ -147,6 +147,9 @@ namespace LiteSupport.Controllers
                                                       }
                                         };
 
+
+
+
             if (ticket == null)
             {
                 return NotFound();

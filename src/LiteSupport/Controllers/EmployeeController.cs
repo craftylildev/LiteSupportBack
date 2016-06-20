@@ -27,42 +27,44 @@ namespace LiteSupport.Controllers
 
         // GET: api/Employee
         [HttpGet]
-        public IActionResult Get([FromQuery] string username)
+        public IActionResult Get([FromQuery]int? EmployeeId)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+            
+            IQueryable<EmployeeDetails> employees = from e in _context.Employee
+                                             join d in _context.Department
+                                             on e.DepartmentId equals d.DepartmentId
+                                             select new EmployeeDetails
+                                             {
+                                                 EmployeeId = e.EmployeeId,
+                                                 FirstNameE = e.FirstNameE,
+                                                 LastNameE = e.LastNameE,
+                                                 DepartmentId = d.DepartmentId,
+                                                 DepartmentName = d.DepartmentName
+                                             };
 
-            IQueryable<EmployeeDetails> employee = from e in _context.Employee
-                                                   join d in _context.Department
-                                                   on e.DepartmentId equals d.DepartmentId
-                                         select new EmployeeDetails
-                                         {
-                                             EmployeeId = e.EmployeeId,
-                                             FirstName = e.FirstNameE,
-                                             LastName = e.LastNameE,
-                                             Username = e.Username,
-                                             Email = e.EmailE,
-                                             Phone = e.PhoneE,
-                                             DepartmentId = e.DepartmentId,
-                                             DepartmentName = d.DepartmentName
+            
+            //if (username != null)
+            //{
+            //    employee = employee.Where(e => e.Username == username);
+            //}
 
-                                         };
-
-            if (username != null)
-            {
-                employee = employee.Where(e => e.Username == username);
-            }
-
-            if (employee == null)
+            if (employees == null)
             {
                 return NotFound();
             }
 
-            return Ok(employee);
-        }
+            if (EmployeeId != null)
+            {
+                employees = employees.Where(emp => emp.EmployeeId == EmployeeId);
+            }
 
+            return Ok(employees);
+        }
+        
         // GET api/Employee/5
         [HttpGet("{id}", Name = "GetEmployee")]
         public IActionResult Get(int id)
@@ -72,7 +74,23 @@ namespace LiteSupport.Controllers
                 return BadRequest(ModelState);
             }
 
-            Employee employee = _context.Employee.Single(m => m.EmployeeId == id);
+            //Employee employee = _context.Employee.Single(m => m.EmployeeId == id);
+
+            IQueryable<EmployeeDetails> employee = from e in _context.Employee
+                                                   join d in _context.Department
+                                                   on e.DepartmentId equals d.DepartmentId
+                                                   where e.EmployeeId == id
+                                                   select new EmployeeDetails
+                                                   {
+                                                       EmployeeId = e.EmployeeId,
+                                                       FirstNameE = e.FirstNameE,
+                                                       LastNameE = e.LastNameE,
+                                                       Username = e.Username,
+                                                       EmailE = e.EmailE,
+                                                       PhoneE = e.PhoneE,
+                                                       DepartmentId = e.DepartmentId,
+                                                       DepartmentName = d.DepartmentName
+                                                   };
 
             if (employee == null)
             {
@@ -99,7 +117,7 @@ namespace LiteSupport.Controllers
             {
                 return new StatusCodeResult(StatusCodes.Status409Conflict);
             }
-
+            
             _context.Employee.Add(employee);
             try
             {
