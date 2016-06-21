@@ -122,6 +122,7 @@ namespace LiteSupport.Controllers
                                             PriorityName = p.PriorityName,
                                             Description = t.Description,
 
+                                            CustomerId = c.CustomerId,
                                             FirstNameC = c.FirstNameC,
                                             LastNameC = c.LastNameC,
                                             Company = c.Company,
