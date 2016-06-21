@@ -119,7 +119,9 @@ namespace LiteSupport.Controllers
                                             Title = t.Title,
                                             DateCreatedT = t.DateCreatedT,
                                             TtypeName = ty.TtypeName,
+                                            TtypeId = ty.TtypeId,
                                             PriorityName = p.PriorityName,
+                                            PriorityId = p.PriorityId,
                                             Description = t.Description,
 
                                             CustomerId = c.CustomerId,
