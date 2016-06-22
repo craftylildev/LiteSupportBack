@@ -1,5 +1,5 @@
---temp-output:C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\obj\Debug\netcoreapp1.0\
---out:C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\bin\Debug\netcoreapp1.0\LiteSupport.dll
+--temp-output:C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\obj\Debug\netcoreapp1.0\
+--out:C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\bin\Debug\netcoreapp1.0\LiteSupport.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -195,29 +195,30 @@
 --reference:C:\Users\Jen Solima\.nuget\packages\System.Threading.Timer\4.0.1-rc2-24027\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\Jen Solima\.nuget\packages\System.Xml.ReaderWriter\4.0.11-rc2-24027\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\Jen Solima\.nuget\packages\System.Xml.XDocument\4.0.11-rc2-24027\ref\netstandard1.3\System.Xml.XDocument.dll
---resource:"C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\obj\Debug\netcoreapp1.0\LiteSupportdotnet-compile.deps.json",LiteSupport.deps.json
-C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Program.cs
-C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Startup.cs
-C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Controllers\CustomerController.cs
-C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Controllers\DepartmentController.cs
-C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Controllers\EmployeeController.cs
-C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Controllers\TicketController.cs
-C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\DataModels\EmployeeDetails.cs
-C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\DataModels\TicketDetails.cs
-C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\20160614151930_InitialMigration.cs
-C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\20160614151930_InitialMigration.Designer.cs
-C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\20160615132053_addUsernameToEmployee.cs
-C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\20160615132053_addUsernameToEmployee.Designer.cs
-C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\20160615142156_editDateCreatedProps.cs
-C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\20160615142156_editDateCreatedProps.Designer.cs
-C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\20160615155839_EditCustEmplPropNames.cs
-C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\20160615155839_EditCustEmplPropNames.Designer.cs
-C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\LSContextModelSnapshot.cs
-C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Models\Comment.cs
-C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Models\Customer.cs
-C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Models\Department.cs
-C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Models\Employee.cs
-C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Models\LSContext.cs
-C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Models\Priority.cs
-C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Models\Ticket.cs
-C:\Users\Jen Solima\Documents\Visual Studio 2015\Projects\LiteSupport\src\LiteSupport\Models\Ttype.cs
+--resource:"C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\obj\Debug\netcoreapp1.0\LiteSupportdotnet-compile.deps.json",LiteSupport.deps.json
+C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Program.cs
+C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Startup.cs
+C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Controllers\CommentController.cs
+C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Controllers\CustomerController.cs
+C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Controllers\DepartmentController.cs
+C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Controllers\EmployeeController.cs
+C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Controllers\TicketController.cs
+C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\DataModels\EmployeeDetails.cs
+C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\DataModels\TicketDetails.cs
+C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\20160614151930_InitialMigration.cs
+C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\20160614151930_InitialMigration.Designer.cs
+C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\20160615132053_addUsernameToEmployee.cs
+C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\20160615132053_addUsernameToEmployee.Designer.cs
+C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\20160615142156_editDateCreatedProps.cs
+C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\20160615142156_editDateCreatedProps.Designer.cs
+C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\20160615155839_EditCustEmplPropNames.cs
+C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\20160615155839_EditCustEmplPropNames.Designer.cs
+C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\LSContextModelSnapshot.cs
+C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Models\Comment.cs
+C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Models\Customer.cs
+C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Models\Department.cs
+C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Models\Employee.cs
+C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Models\LSContext.cs
+C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Models\Priority.cs
+C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Models\Ticket.cs
+C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Models\Ttype.cs
