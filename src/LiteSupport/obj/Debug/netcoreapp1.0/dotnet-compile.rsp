@@ -212,6 +212,10 @@ C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSu
 C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\20160615142156_editDateCreatedProps.Designer.cs
 C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\20160615155839_EditCustEmplPropNames.cs
 C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\20160615155839_EditCustEmplPropNames.Designer.cs
+C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\20160622132400_tryingToRemoveCustId.cs
+C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\20160622132400_tryingToRemoveCustId.Designer.cs
+C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\20160622132607_tryingToRemoveCustId3.cs
+C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\20160622132607_tryingToRemoveCustId3.Designer.cs
 C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Migrations\LSContextModelSnapshot.cs
 C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Models\Comment.cs
 C:\Users\Jen Solima\documents\visual studio 2015\Projects\LiteSupport\src\LiteSupport\Models\Customer.cs
