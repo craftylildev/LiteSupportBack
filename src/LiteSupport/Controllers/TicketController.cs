@@ -67,22 +67,22 @@ namespace LiteSupport.Controllers
             //                             };
 
             IQueryable<object> ticket = from t in _context.Ticket
-                                               join p in _context.Priority
-                                               on t.PriorityId equals p.PriorityId
-                                               join c in _context.Customer
-                                               on t.CustomerId equals c.CustomerId
-                                               orderby t.TicketId
+                                        join p in _context.Priority
+                                        on t.PriorityId equals p.PriorityId
+                                        join c in _context.Customer
+                                        on t.CustomerId equals c.CustomerId
+                                        orderby t.TicketId
 
-                                               select new 
-                                               {
-                                                   TicketId = t.TicketId,
-                                                   Title = t.Title,
-                                                   DateCreatedT = t.DateCreatedT,
-                                                   
-                                                   PriorityName = p.PriorityName,
+                                        select new
+                                        {
+                                            TicketId = t.TicketId,
+                                            Title = t.Title,
+                                            DateCreatedT = t.DateCreatedT,
 
-                                                   Company = c.Company
-                                               };
+                                            PriorityName = p.PriorityName,
+
+                                            Company = c.Company
+                                        };
 
 
             if (ticket == null)
@@ -93,7 +93,7 @@ namespace LiteSupport.Controllers
             return Ok(ticket);
         }
 
-        // GET api/Ticket/5
+        //GET api/Ticket/5
         [HttpGet("{id}", Name = "GetTicket")]
         public IActionResult Get(int id)
         {
@@ -112,16 +112,19 @@ namespace LiteSupport.Controllers
                                         join c in _context.Customer
                                         on t.CustomerId equals c.CustomerId
                                         where t.TicketId == id
-                                        
+
                                         select new
                                         {
                                             TicketId = t.TicketId,
                                             Title = t.Title,
                                             DateCreatedT = t.DateCreatedT,
                                             TtypeName = ty.TtypeName,
+                                            TtypeId = ty.TtypeId,
                                             PriorityName = p.PriorityName,
+                                            PriorityId = p.PriorityId,
                                             Description = t.Description,
 
+                                            CustomerId = c.CustomerId,
                                             FirstNameC = c.FirstNameC,
                                             LastNameC = c.LastNameC,
                                             Company = c.Company,
@@ -159,8 +162,10 @@ namespace LiteSupport.Controllers
         }
 
         // POST api/Ticket
+        //[Route("api/Ticket")]
         [HttpPost]
         public IActionResult Post([FromBody]Ticket ticket)
+        //public IActionResult Post(Ticket ticket)
         {
             if (!ModelState.IsValid)
             {
