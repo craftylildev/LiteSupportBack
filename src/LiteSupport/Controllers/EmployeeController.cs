@@ -33,20 +33,20 @@ namespace LiteSupport.Controllers
             {
                 return BadRequest(ModelState);
             }
-            
-            IQueryable<EmployeeDetails> employee = from e in _context.Employee
-                                             join d in _context.Department
-                                             on e.DepartmentId equals d.DepartmentId
-                                             select new EmployeeDetails
-                                             {
-                                                 EmployeeId = e.EmployeeId,
-                                                 FirstNameE = e.FirstNameE,
-                                                 LastNameE = e.LastNameE,
-                                                 DepartmentId = d.DepartmentId,
-                                                 DepartmentName = d.DepartmentName
-                                             };
 
-            
+            IQueryable<EmployeeDetails> employee = from e in _context.Employee
+                                                   join d in _context.Department
+                                                   on e.DepartmentId equals d.DepartmentId
+                                                   select new EmployeeDetails
+                                                   {
+                                                       EmployeeId = e.EmployeeId,
+                                                       FirstNameE = e.FirstNameE,
+                                                       LastNameE = e.LastNameE,
+                                                       DepartmentId = d.DepartmentId,
+                                                       DepartmentName = d.DepartmentName
+                                                   };
+
+
             //if (username != null)
             //{
             //    employee = employee.Where(e => e.Username == username);
@@ -64,7 +64,7 @@ namespace LiteSupport.Controllers
 
             return Ok(employee);
         }
-        
+
         // GET api/Employee/5
         [HttpGet("{id}", Name = "GetEmployee")]
         public IActionResult Get(int id)
@@ -101,7 +101,7 @@ namespace LiteSupport.Controllers
         }
 
         // POST api/Employee
-        [Route("api/Employee")]
+        //[Route("api/Employee")]
         [HttpPost]
         public IActionResult Post([FromBody]Employee employee)
         {

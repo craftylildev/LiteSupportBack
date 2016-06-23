@@ -34,38 +34,6 @@ namespace LiteSupport.Controllers
                 return BadRequest(ModelState);
             }
 
-            //IQueryable<TicketDetails> ticket = from t in _context.Ticket
-            //                                   join ty in _context.Ttype
-            //                                   on t.TtypeId equals ty.TtypeId
-            //                                   join p in _context.Priority
-            //                                   on t.PriorityId equals p.PriorityId
-            //                                   join co in _context.Comment
-            //                                   on t.TicketId equals co.TicketId
-            //                                   join c in _context.Customer
-            //                                   on t.CustomerId equals c.CustomerId
-            //                                   join e in _context.Employee
-            //                                   on co.EmployeeId equals e.EmployeeId
-            //                                   orderby t.TicketId
-            //                             select new TicketDetails
-            //                             {
-            //                                 TicketId = t.TicketId,
-            //                                 Title = t.Title,
-            //                                 DateCreatedT = t.DateCreatedT,
-            //                                 TtypeName = ty.TtypeName,
-            //                                 PriorityName = p.PriorityName,
-            //                                 Description = t.Description,
-            //                                 FirstNameC = c.FirstNameC,
-            //                                 LastNameC = c.LastNameC,
-            //                                 Company = c.Company,
-            //                                 EmailC = c.EmailC,
-            //                                 PhoneC = c.PhoneC,
-            //                                 URL = c.URL,
-            //                                 CommentId = co.CommentId,
-            //                                 CommentMsg = co.CommentMsg,
-            //                                 FirstNameE = e.FirstNameE,
-            //                                 LastNameE = e.LastNameE
-            //                             };
-
             IQueryable<object> ticket = from t in _context.Ticket
                                         join p in _context.Priority
                                         on t.PriorityId equals p.PriorityId
@@ -144,6 +112,7 @@ namespace LiteSupport.Controllers
                                                       {
                                                           CommentId = co.CommentId,
                                                           CommentMsg = co.CommentMsg,
+                                                          EmployeeId = e.EmployeeId,
                                                           FirstNameE = e.FirstNameE,
                                                           LastNameE = e.LastNameE,
                                                           DateCreatedC = co.DateCreatedC
@@ -193,6 +162,48 @@ namespace LiteSupport.Controllers
             return CreatedAtRoute("GetTicket", new { id = ticket.TicketId }, ticket);
 
         }
+
+        //// PUT api/Ticket/5
+        //[HttpPut("{id}")]
+        //public IActionResult Put(int id, [FromBody] Ticket ticket)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
+
+        //    Ticket updatedTicket = new Ticket
+        //    {
+        //        TicketId = ticket.TicketId,
+        //        Title = ticket.Title,
+        //        CustomerId = ticket.CustomerId,
+        //        Description = ticket.Description,
+        //        PriorityId = ticket.PriorityId,
+        //        TtypeId = ticket.TtypeId,
+
+        //    };
+
+        //    _context.Entry(ticket).State = EntityState.Modified;
+
+        //    try
+        //    {
+        //        _context.SaveChanges();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!TicketExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
+
+        //    return new StatusCodeResult(StatusCodes.Status204NoContent);
+
+        //}
 
         // PUT api/Ticket/5
         [HttpPut("{id}")]
