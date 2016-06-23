@@ -163,6 +163,48 @@ namespace LiteSupport.Controllers
 
         }
 
+        //// PUT api/Ticket/5
+        //[HttpPut("{id}")]
+        //public IActionResult Put(int id, [FromBody] Ticket ticket)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
+
+        //    Ticket updatedTicket = new Ticket
+        //    {
+        //        TicketId = ticket.TicketId,
+        //        Title = ticket.Title,
+        //        CustomerId = ticket.CustomerId,
+        //        Description = ticket.Description,
+        //        PriorityId = ticket.PriorityId,
+        //        TtypeId = ticket.TtypeId,
+
+        //    };
+
+        //    _context.Entry(ticket).State = EntityState.Modified;
+
+        //    try
+        //    {
+        //        _context.SaveChanges();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!TicketExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
+
+        //    return new StatusCodeResult(StatusCodes.Status204NoContent);
+
+        //}
+
         // PUT api/Ticket/5
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] Ticket ticket)

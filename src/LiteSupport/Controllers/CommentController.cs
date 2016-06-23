@@ -58,7 +58,6 @@ namespace LiteSupport.Controllers
 
         // POST api/Comment
         [HttpPost]
-        //public IActionResult Post([FromBody]Comment comment)
         public IActionResult Post([FromBody]Comment comment)
         {
             if (!ModelState.IsValid)
@@ -84,7 +83,6 @@ namespace LiteSupport.Controllers
                 }
             }
 
-            //return CreatedAtRoute("GetComment", new { id = comment.CommentId }, comment);
             return Ok(comment);
 
         }
