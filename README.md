@@ -8,6 +8,6 @@ The back-end uses technologies including .NET, C# and SQL.
 
 ERD I created in [draw.io](http://draw.io) :
 
-[ERD](https://github.com/craftylildev/LiteSupportBack/blob/master/img/LiteSupport.png)
+![ERD](https://github.com/craftylildev/LiteSupportBack/blob/master/img/LiteSupport.png)
 
 
